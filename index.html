@@ -1,80 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="./assets/images/favicon-32x32.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700;800;900&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="styles.css" />
     <title>Frontend Mentor | Age calculator app</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main>
-      <div class="card">
+</head>
+<body>
+<div class="container">
+    <div class="card">
         <form id="form">
-          <label for="day">
-            DAY
-            <br />
-            <input
-              type="number"
-              min="1"
-              max="31"
-              name="day"
-              value=""
-              placeholder="DD"
-              required
-            />
-          </label>
-          <label for="day">
-            MONTH
-            <br />
-            <input
-              type="number"
-              min="1"
-              max="12"
-              name="month"
-              value=""
-              placeholder="MM"
-              required
-            />
-          </label>
-          <label for="day">
-            YEAR
-            <br />
-            <input
-              type="number"
-              min="1930"
-              max="2023"
-              name="year"
-              value=""
-              placeholder="YYYY"
-              required
-            />
-          </label>
+            <div>
+                <label>
+                    <span class="label-text">DAY</span>
+                    <input
+                            type="number"
+                            min="1"
+                            max="31"
+                            name="day"
+                            value=""
+                            placeholder="DD"
+                            required />
+                </label>
+                <small class="required-message"></small>
+            </div>
+            <div>
+                <label>
+                    <span class="label-text">MONTH</span>
+                    <input
+                            type="number"
+                            min="1"
+                            max="12"
+                            name="month"
+                            value=""
+                            placeholder="MM"
+                            required />
+                </label>
+                <small class="required-message"></small>
+            </div>
+            <div>
+                <label>
+                    <span class="label-text">YEAR</span>
+                    <input
+                            type="number"
+                            min="1930"
+                            max="2023"
+                            name="year"
+                            value=""
+                            placeholder="YYYY"
+                            required />
+                </label>
+                <small class="required-message"></small>
+            </div>
         </form>
-        <div class="btn-cont">
-          <hr />
-          <button type="submit" id="form-btn" form="form">
-            <img src="./assets/images/icon-arrow.svg" />
-          </button>
+        <div class="btn-wrapper">
+            <hr />
+            <button type="submit"
+                    id="form-btn"
+                    form="form">
+                <img src="./assets/images/icon-arrow.svg"
+                     alt="Icon arrow" />
+            </button>
         </div>
         <div class="display-date">
-          <p><span class="date years">-- </span>years</p>
-          <p><span class="date months">-- </span>months</p>
-          <p><span class="date days">-- </span>days</p>
+            <p><span class="date years">-- </span>years</p>
+            <p><span class="date months">-- </span>months</p>
+            <p><span class="date days">-- </span>days</p>
         </div>
-      </div>
-    </main>
-    <script src="script.js"></script>
-  </body>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
 </html>
