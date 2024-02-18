@@ -44,20 +44,35 @@ submitButton.addEventListener('click', (e) => {
         }
     });
 
-    toggleErrorClasses(isValid ? 'remove' : 'add');
-
     if (!isValid) {
+        toggleErrorClasses('add');
         return;
     }
 
-    if (year < 1930 || year > 2024) {
+    let hasError = false;
+
+    if (year < 1930 || year > 2023) {
         displayErrorMessage(2, 'Must be in the past');
-        toggleErrorClasses('add');
-    } else if (month < 1 || month > 12) {
+        hasError = true;
+    } else {
+        clearErrorMessage(2);
+    }
+
+    if (month < 1 || month > 12) {
         displayErrorMessage(1, 'Must be a valid month');
-        toggleErrorClasses('add');
-    } else if (day < 1 || day > daysInMonth[month - 1]) {
+        hasError = true;
+    } else {
+        clearErrorMessage(1);
+    }
+
+    if (day < 1 || day > 31 || day > daysInMonth[month - 1]) {
         displayErrorMessage(0, 'Must be a valid day');
+        hasError = true;
+    } else {
+        clearErrorMessage(0);
+    }
+
+    if (hasError) {
         toggleErrorClasses('add');
     } else {
         toggleErrorClasses('remove');
@@ -78,3 +93,4 @@ submitButton.addEventListener('click', (e) => {
         dayDisplay.textContent = `${ days } `;
     }
 });
+
